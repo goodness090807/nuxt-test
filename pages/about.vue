@@ -8,7 +8,9 @@
 <script>
 export default {
     methods: {
-        navigate() {},
+        navigate() {
+            navigateTo("/");
+        },
     },
 };
 </script>

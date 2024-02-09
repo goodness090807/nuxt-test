@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>About</h1>
-        <button @click="navigate">page1</button>
+        <button @click="navigate">back</button>
     </div>
 </template>
 

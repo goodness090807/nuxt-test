@@ -1,14 +1,31 @@
 <template>
     <div>
-        <button @click="navigate">page2</button>
+        <button @click="navigateWithNavigationTo">
+            navigateWithNavigationTo
+        </button>
+        <button @click="navigateWithLocation">navigateWithLocation</button>
+        <button @click="navigateWithVanillaJS">navigateWithVanillaJS</button>
+        <button @click="navigateWithReplace">navigateWithReplace</button>
     </div>
 </template>
 
 <script>
 export default {
     methods: {
-        navigate() {
+        navigateWithNavigationTo() {
             navigateTo("/about");
+        },
+        navigateWithLocation() {
+            window.location.href = "/about";
+        },
+        navigateWithVanillaJS() {
+            window.history.pushState({}, "", "/about");
+
+            const navEvent = new PopStateEvent("popstate");
+            window.dispatchEvent(navEvent);
+        },
+        navigateWithReplace() {
+            navigateTo("/about", { replace: true });
         },
     },
     mounted() {

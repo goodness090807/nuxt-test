@@ -14,7 +14,7 @@
         <NuxtLink
             style="margin-left: 10px; margin-right: 10px"
             href="/about"
-            replace="true"
+            replace
             >navigateWithNuxtLinkReplace</NuxtLink
         >
         <button @click="navigateWithLocation">navigateWithLocation</button>

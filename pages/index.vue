@@ -4,7 +4,6 @@
             navigateWithNavigationTo
         </button>
         <button @click="navigateWithLocation">navigateWithLocation</button>
-        <button @click="navigateWithVanillaJS">navigateWithVanillaJS</button>
         <button @click="navigateWithReplace">navigateWithReplace</button>
     </div>
 </template>
@@ -17,12 +16,6 @@ export default {
         },
         navigateWithLocation() {
             window.location.href = "/about";
-        },
-        navigateWithVanillaJS() {
-            window.history.pushState({}, "", "/about");
-
-            const navEvent = new PopStateEvent("popstate");
-            window.dispatchEvent(navEvent);
         },
         navigateWithReplace() {
             navigateTo("/about", { replace: true });

@@ -5,6 +5,7 @@
         </button>
         <button @click="navigateWithLocation">navigateWithLocation</button>
         <button @click="navigateWithReplace">navigateWithReplace</button>
+        <NuxtLink href="/about">navigateWithNuxtLink</NuxtLink>
     </div>
 </template>
 

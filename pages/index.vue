@@ -3,9 +3,21 @@
         <button @click="navigateWithNavigationTo">
             navigateWithNavigationTo
         </button>
+        <button
+            style="margin-left: 10px; margin-right: 10px"
+            @click="navigateWithReplace">
+            navigateWithReplace
+        </button>
+        <NuxtLink style="margin-left: 10px; margin-right: 10px" href="/about"
+            >navigateWithNuxtLink</NuxtLink
+        >
+        <NuxtLink
+            style="margin-left: 10px; margin-right: 10px"
+            href="/about"
+            replace="true"
+            >navigateWithNuxtLinkReplace</NuxtLink
+        >
         <button @click="navigateWithLocation">navigateWithLocation</button>
-        <button @click="navigateWithReplace">navigateWithReplace</button>
-        <NuxtLink href="/about">navigateWithNuxtLink</NuxtLink>
     </div>
 </template>
 
@@ -21,20 +33,6 @@ export default {
         navigateWithReplace() {
             navigateTo("/about", { replace: true });
         },
-    },
-    mounted() {
-        const originalPushState = history.pushState;
-        const originalReplaceState = history.replaceState;
-
-        history.pushState = function () {
-            console.log("history.pushState triggered", arguments);
-            originalPushState.apply(this, arguments);
-        };
-
-        history.replaceState = function () {
-            console.log("history.replaceState triggered", arguments);
-            originalReplaceState.apply(this, arguments);
-        };
     },
 };
 </script>

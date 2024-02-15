@@ -1,12 +1,12 @@
 <template>
     <div>
         <button @click="navigateWithNavigationTo">
-            navigateWithNavigationTo
+            navigateWithNavigateTo
         </button>
         <button
             style="margin-left: 10px; margin-right: 10px"
             @click="navigateWithReplace">
-            navigateWithReplace
+            navigateWithNavigateToReplace
         </button>
         <NuxtLink style="margin-left: 10px; margin-right: 10px" href="/about"
             >navigateWithNuxtLink</NuxtLink
